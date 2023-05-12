@@ -1,0 +1,26 @@
+/*body{
+    background-color: aqua;
+}*/
+
+/*#cv-form{
+    display: none;
+}*/
+
+#cv-template{
+    display: none;
+}
+
+.myimg{
+    /*border: 1px solid red;*/
+    border-radius: 50%;
+    width: 150px;
+    height: 180px;
+}
+
+.background{
+    background-color: rgb(207, 231, 237);
+}
+
+.bg{
+    background-color: rgb(238, 241, 242);
+}

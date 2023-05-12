@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+
+    <title> Online Resume Builder</title>
+</head>
+<body>
+     
+    <div class="container" id="cv-form">
+    <h1 class="text-center my-2">Online Resume Builder</h1>
+    <p class="text-center"> By Abhinandan Sinha</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Personal Information</h3>
+
+            <div class="form group mt-2">
+                <label for="nameField">Your Name</label>
+                <input type="text" id ="nameField" placeholder ="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form group mt-2">
+                <label for="contactField">Your Contact Numbers</label>
+                <input type="text" id ="contactField" placeholder ="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form group mt-2">
+                <label for="addressField">Your Address</label>
+                <textarea id ="addressField" placeholder ="Enter here" class="form-control" rows="5"></textarea>
+            </div>
+
+            <div class="form group mt-3">
+
+                <label for="">Select you photo</label>
+                <input id="imgField" type="file" class="form-control">
+
+            </div>
+            
+            <p class="text-secondary my-3">Important Links</p>
+
+            <div class="form group mt-2">
+                <label for="linkedField">LinkedIN</label>
+                <input type="text" id ="linkedField" placeholder ="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form group mt-2">
+                <label for="gmailField">Gmail</label>
+                <input type="text" id ="gmailField" placeholder ="Enter here" class="form-control"/>
+            </div>
+
+            <div class="form group mt-2">
+                <label for="githubField">GitHub</label>
+                <input type="text" id ="githubField" placeholder ="Enter here" class="form-control"/>
+            </div>
+
+
+            <div class="form group mt-2" id="pr">
+                <label for="">Projects</label>
+                <textarea  placeholder ="Enter here" class="form-control prField" rows="3"></textarea>
+
+                <div class="container text-secondary  mt-2" id="prAddButton">
+                    <button onclick="addNewPRField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form group mt-2">
+                <label for="interestField">Interests</label>
+                <input type="text" id ="interestField" placeholder ="Enter here" class="form-control"/>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-md-6">
+            <h3>Professional Information</h3>
+
+            <div class="form group mt-2">
+                <label for="">About</label>
+                <textarea  id="objectiveField" placeholder ="Enter here" class="form-control" rows="5"></textarea>
+            </div>
+
+            <div class="form group mt-2" id="we">
+                <label for="">Work Experience</label>
+                <textarea  placeholder ="Enter here" class="form-control weField" rows="3"></textarea>
+
+                <div class="container text-center mt-2" id="weAddButton">
+                    <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form group mt-2" id="aq">
+                <label for="">Academic Qualification</label>
+                <textarea  placeholder ="Enter here" class="form-control eqField" rows="3"></textarea>
+
+                <div class="container text-center mt-2" id="aqAddButton">
+                    <button onclick="addNewAQField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form group mt-2" id="skill">
+                <label for="">Skills</label>
+                <textarea  placeholder ="Enter here" class="form-control skillField" rows="3"></textarea>
+
+                <div class="container text-center mt-2" id="skillAddButton">
+                    <button onclick="addNewskillField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<div class="container text-center mt-3">
+    <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+</div>
+    </div>
+
+    <div class="container" id="cv-template">
+
+        <div class="row">
+
+            <div class="col-md-5 text-center py-5 background">
+
+                <img src="https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png"
+                alt=""
+                class="img-fluid myimg"
+                id="imgTemplate"/>
+
+                <div class="container">
+
+                    
+                    <h1 id="nameT2" style="font-weight:980">Your Name</h1>
+                    <p id="contactT">+919843561209, +918679456390</p>
+                    <p id="addressT">270/1 Sector 5 SaltLake, India</p>
+
+                    <hr />
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                      </svg><p><a id="linkedT"href="#1">https://www.linkedIn.com</a></p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                      </svg> <p><a id="gmailT" href="#1">https://www.gmail.com</a></p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg><p><a id="githubT" href="#1">https://www.github.com</a></p>
+
+
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg">
+
+                        <h3>Projects</h3>
+
+
+                    </div>
+                    <div class="card-body">
+                       <ul id="prT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                       </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg">
+
+                        <h3>Interests</h3>
+
+
+                    </div>
+                    <p id="interestT">+919843561209, +918679456390</p>
+                </div>
+
+
+            </div>
+            <div class="col-md-7 py-5">
+
+                
+
+                <div class="card mt-4">
+                    <div class="card-header bg">
+
+                        <h3>About</h3>
+
+
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, praesentium! Ex assumenda sit fugit necessitatibus officia rerum, quaerat labore sequi quibusdam quo molestiae architecto unde fugiat? Molestiae voluptate beatae aliquam cumque aperiam cupiditate vitae tempora ea architecto sint et iure voluptas accusantium ad, possimus quisquam laudantium cum error voluptatum consequatur.</p>
+                    </div>
+                </div>
+
+
+                <div class="card mt-4">
+                    <div class="card-header bg">
+
+                        <h3>Work Experience</h3>
+
+
+                    </div>
+                    <div class="card-body">
+                       <ul id="weT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                       </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg">
+
+                        <h3>Academic Qualification</h3>
+
+
+                    </div>
+                    <div class="card-body">
+                       <ul id="aqT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                       </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg">
+
+                        <h3>Skills</h3>
+
+
+                    </div>
+                    <div class="card-body">
+                       <ul id="skillT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatem!</li>
+                       </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">Print CV</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src ="script.js"></script>
+</body>
+</html>
